@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rahul Saha | GIS • Remote Sensing • Planning</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Redesigned GIS / Remote Sensing hero --- */
+.redesigned-hero{
+  position:relative;
+  min-height:680px;
+  display:grid;
+  grid-template-columns:minmax(420px,.82fr) minmax(560px,1.18fr);
+  align-items:center;
+  gap:10px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 76% 48%, rgba(204,246,225,.70), transparent 31%),
+    linear-gradient(110deg,#fbfcf7 0%,#f4f8f1 48%,#eef8f3 100%);
+  padding-top:36px;
+}
+.redesigned-hero:before{
+  content:"";
+  position:absolute;
+  left:-80px;
+  bottom:-170px;
+  width:430px;
+  height:260px;
+  opacity:.20;
+  background:repeating-radial-gradient(ellipse at center,
+    transparent 0 15px,#8ba89c 16px 17px,transparent 18px 30px);
+  transform:rotate(-9deg);
+  pointer-events:none;
+}
+.hero-copy{
+  position:relative;
+  z-index:2;
+  padding-left:5.5vw;
+  max-width:650px;
+}
+.hero-copy .kicker{
+  margin:0 0 24px;
+  letter-spacing:.25em;
+  font-size:13px;
+  font-weight:700;
+  color:#50716d;
+}
+.hero-copy h1{
+  margin:0;
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(76px,8vw,138px);
+  line-height:.84;
+  letter-spacing:-.065em;
+  color:#092b23;
+  font-weight:700;
+}
+.hero-copy h2{
+  margin:28px 0 10px;
+  font-family:"Space Grotesk",sans-serif;
+  font-size:28px;
+  color:#0c3129;
+}
+.hero-copy .lead{
+  max-width:590px;
+  margin:0;
+  font-size:17px;
+  line-height:1.65;
+  color:#55746f;
+}
+.hero-specialties{
+  display:flex;
+  gap:0;
+  margin:28px 0 25px;
+}
+.hero-specialties>div{
+  min-width:145px;
+  padding-right:22px;
+  margin-right:22px;
+  border-right:1px solid rgba(25,86,72,.20);
+  display:grid;
+  grid-template-columns:38px 1fr;
+  column-gap:8px;
+  align-items:center;
+}
+.hero-specialties>div:last-child{border-right:0;margin-right:0}
+.hero-icon{
+  grid-row:1 / span 2;
+  width:34px;height:34px;
+  border:2px solid #19745b;
+  border-radius:50%;
+  display:grid;place-items:center;
+  color:#19745b;
+  font-size:20px;
+}
+.hero-specialties b{font-size:15px;color:#123a31}
+.hero-specialties small{font-size:12px;color:#66827d}
+.redesigned-hero .actions{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.redesigned-hero .btn{
+  display:inline-flex;
+  align-items:center;
+  gap:22px;
+  padding:16px 24px;
+  border-radius:30px;
+  background:#083d31;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 12px 25px rgba(8,61,49,.14);
+}
+.redesigned-hero .btn span{font-size:22px;line-height:0}
+.hero-cv{
+  display:inline-flex;
+  align-items:center;
+  padding:15px 23px;
+  border:1px solid #2d7565;
+  border-radius:30px;
+  color:#175447;
+  text-decoration:none;
+  font-weight:600;
+  background:rgba(255,255,255,.55);
+}
+.redesigned-hero .meta{
+  margin-top:22px;
+  font-size:12px;
+  letter-spacing:.04em;
+  color:#557872;
+}
+.redesigned-hero .meta i{font-style:normal;color:#91aaa4;margin:0 9px}
+.hero-illustration{
+  position:relative;
+  z-index:1;
+  min-width:0;
+  height:650px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+.hero-illustration img{
+  width:100%;
+  max-width:930px;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  mix-blend-mode:multiply;
+  filter:saturate(1.04) contrast(1.02);
+  transform:translateX(3%);
+}
+.hero-bottom-line{
+  position:absolute;
+  left:5.5vw;
+  bottom:28px;
+  display:flex;
+  gap:7px;
+  z-index:3;
+}
+.hero-bottom-line span{
+  display:block;
+  height:4px;
+  width:48px;
+  border-radius:4px;
+  background:#c8d4d0;
+}
+.hero-bottom-line span:first-child{width:50px;background:#16815f}
+
+/* Final hero illustration treatment */
+.hero-illustration{height:680px;align-items:center;justify-content:center;overflow:visible}
+.hero-illustration img{width:min(960px,112%);max-width:none;height:auto;object-fit:contain;object-position:center;mix-blend-mode:normal;filter:none;transform:translate(1%,0)}
+.map-callout{position:absolute;z-index:4;background:rgba(255,255,255,.94);border:1px solid rgba(35,112,91,.18);border-radius:12px;padding:12px 16px;box-shadow:0 12px 30px rgba(24,74,61,.12);backdrop-filter:blur(8px);display:grid;gap:3px;min-width:185px}
+.map-callout b{font-size:14px;color:#10372e}.map-callout small{font-size:10px;color:#66827d}
+.rs-callout{left:8%;top:29%}.gis-callout{right:0;top:18%}.plan-callout{right:1%;bottom:20%}
+
+@media(max-width:1100px){
+  .redesigned-hero{grid-template-columns:1fr 1fr;min-height:610px}
+  .hero-copy{padding-left:4vw}
+  .hero-copy h1{font-size:clamp(70px,9vw,110px)}
+  .hero-illustration{height:580px}
+  .hero-specialties>div{min-width:120px;padding-right:12px;margin-right:12px}
+}
+@media(max-width:820px){
+  .map-callout{transform:scale(.9);transform-origin:center}
+  .rs-callout{left:2%;top:25%}.gis-callout{right:-2%;top:12%}.plan-callout{right:-2%;bottom:14%}
+
+  .redesigned-hero{
+    grid-template-columns:1fr;
+    padding:55px 0 70px;
+  }
+  .hero-copy{padding:0 7vw;max-width:none}
+  .hero-copy h1{font-size:clamp(72px,18vw,120px)}
+  .hero-illustration{
+    height:470px;
+    margin-top:-15px;
+  }
+  .hero-illustration img{
+    max-width:900px;
+    width:125%;
+    transform:translateX(7%);
+  }
+  .hero-specialties{flex-wrap:wrap;row-gap:18px}
+  .hero-specialties>div{min-width:150px}
+}
+@media(max-width:520px){
+  .map-callout{display:none}
+
+  .redesigned-hero{padding-top:35px}
+  .hero-copy .kicker{font-size:10px;letter-spacing:.16em}
+  .hero-copy h2{font-size:23px}
+  .hero-copy .lead{font-size:15px}
+  .hero-specialties>div{min-width:45%;margin-right:10px;padding-right:10px}
+  .redesigned-hero .actions{flex-wrap:wrap}
+  .hero-illustration{height:360px;margin-top:5px}
+  .redesigned-hero .meta{font-size:10px}
+}
+</style>
+
+</head>
+<body>
+<div class="progress"></div>
+<header><a class="logo" href="#home">RS<span>.</span></a><nav><a href="#about">About</a><a href="#expertise">Skills</a><a href="#projects">Projects</a><a href="#gallery">Maps</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav><a class="contact-btn" href="#contact">Let’s Connect <span>→</span></a></header>
+
+<section class="hero redesigned-hero" id="home">
+  <div class="hero-copy">
+    <p class="kicker">GIS • REMOTE SENSING • URBAN PLANNING</p>
+    <h1>Rahul<br>Saha</h1>
+    <h2>Junior GIS Expert</h2>
+    <p class="lead">Spatial analysis, remote sensing, cartography and planning-focused GIS solutions for evidence-based development.</p>
+
+    <div class="hero-specialties">
+      <div><span class="hero-icon">⌖</span><b>GIS</b><small>Spatial Analysis</small></div>
+      <div><span class="hero-icon">⌁</span><b>Remote Sensing</b><small>Earth Observation</small></div>
+      <div><span class="hero-icon">▥</span><b>Urban Planning</b><small>Sustainable Cities</small></div>
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="#projects">Explore Projects <span>→</span></a>
+      <a class="hero-cv" href="assets/Rahul_Saha_CV.pdf">↓ &nbsp; Download CV</a>
+    </div>
+
+    <p class="meta">Bangladesh <i>│</i> National Consultant – Jr. GIS Expert <i>│</i> UDD</p>
+  </div>
+
+  <div class="hero-illustration">
+    <img src="assets/hero-gis-rs.png" alt="GIS and remote sensing illustration with satellite, Earth, layered maps and Bangladesh">
+    <div class="map-callout rs-callout"><b>Remote Sensing</b><small>Satellite Imagery &amp; Analysis</small></div>
+    <div class="map-callout gis-callout"><b>GIS</b><small>Spatial Data &amp; Mapping</small></div>
+    <div class="map-callout plan-callout"><b>Urban Planning</b><small>Better Spaces, Stronger Communities</small></div>
+  </div>
+
+  <div class="hero-bottom-line"><span></span><span></span><span></span></div>
+</section>
+
+<div class="stats"><div><b>GIS</b><small>Spatial Analysis</small></div><div><b>RS</b><small>Satellite Analysis</small></div><div><b>GEE</b><small>Cloud Processing</small></div><div><b>PY</b><small>GIS Automation</small></div><div><b>UDD</b><small>Planning Support</small></div></div>
+
+<section class="section" id="about"><p class="label">01 / ABOUT</p><div class="two"><h2>Spatial data is useful when people can <em>understand it.</em></h2><div class="copy"><p>I work at the intersection of <b>geospatial technology and development planning</b>. My experience includes satellite-image processing, crop pattern analysis, thematic mapping, spatial databases, land-use analysis and planning support.</p><p>Currently, I serve as a <b>National Consultant – Jr. GIS Expert</b> with the <b>Urban Development Directorate (UDD)</b>.</p></div></div></section>
+
+<section class="section dark" id="expertise"><p class="label">02 / EXPERTISE</p><div class="two title"><h2>What I <em>work with</em></h2><p>From raw satellite pixels to polished planning maps.</p></div><div class="skills">
+<article><span>01</span><h3>GIS & Spatial Analysis</h3><p>ArcGIS Pro, QGIS, overlay, proximity, suitability and spatial database workflows.</p><small>ArcGIS Pro · QGIS · Spatial DB</small></article>
+<article><span>02</span><h3>Remote Sensing</h3><p>Sentinel-2, Landsat, spectral indices, classification, crop mapping and change analysis.</p><small>Sentinel-2 · Landsat · Indices</small></article>
+<article><span>03</span><h3>Google Earth Engine</h3><p>Cloud satellite processing, temporal composites, band analysis and raster workflows.</p><small>GEE · JavaScript · Raster</small></article>
+<article><span>04</span><h3>Python for GIS</h3><p>Batch clipping, extraction, reclassification and repeatable geoprocessing automation.</p><small>Python · ArcPy · Automation</small></article>
+<article><span>05</span><h3>Planning & Land Use</h3><p>Upazila planning, land use, population, transportation and suitability analysis.</p><small>Planning · LULC · Suitability</small></article>
+<article><span>06</span><h3>Cartography</h3><p>Publication-ready layouts, thematic maps and presentation-focused spatial graphics.</p><small>Maps · Layout · Visualization</small></article>
+</div></section>
+
+<section class="section projects" id="projects"><p class="label">03 / SELECTED PROJECTS</p><div class="two title"><h2>Work that tells a <em>spatial story.</em></h2><div class="filters"><button class="active" data-f="all">All</button><button data-f="rs">Remote Sensing</button><button data-f="planning">Planning</button><button data-f="gis">GIS</button></div></div>
+<div class="project-grid">
+<article class="project" data-cat="rs gis"><div class="visual crop"><span>SENTINEL–2</span><i></i><i></i><i></i><i></i><strong>MAGURA • JASHORE • FARIDPUR • JHENAIDAH</strong></div><div class="info"><small>01 · REMOTE SENSING / GIS</small><h3>Crop Pattern Analysis</h3><p>Multi-cropping analysis using BAMIS crop calendars, Sentinel-2 imagery, Google Earth Engine and ArcGIS Pro, identifying single, double and triple-crop areas.</p><b>Sentinel-2 · GEE · ArcGIS Pro · Python</b></div></article>
+<article class="project" data-cat="planning gis"><div class="visual plan"><i></i><i></i><i></i><i></i><b>BUILT-UP · ROAD · WATER</b></div><div class="info"><small>02 · PLANNING / SPATIAL ANALYSIS</small><h3>Upazila Master Planning</h3><p>Spatial datasets for land use, population, transportation, waterbodies, agriculture, facilities and urban suitability.</p><b>Land Use · Suitability · Planning · Cartography</b></div></article>
+<article class="project" data-cat="gis"><div class="visual hydro"><i></i><i></i><i></i><strong>HIGH ↕ LOW RECHARGE</strong></div><div class="info"><small>03 · ENVIRONMENTAL GIS</small><h3>Groundwater Recharge Assessment</h3><p>Spatial interpretation of recharge potential using terrain, hydrological and land-surface information for planning support.</p><b>Hydrology · DEM · Overlay · GIS</b></div></article>
+<article class="project" data-cat="gis"><div class="visual city"><i></i><i></i><strong>DHAKA CITY</strong></div><div class="info"><small>04 · RESEARCH / ENVIRONMENT</small><h3>Environmental Pollution & Public Perception</h3><p>GIS and remote sensing assistance for survey-based research on perceptions, attitudes and impacts of environmental pollution in Dhaka City.</p><b>Survey · GIS · Research</b></div></article>
+<article class="project" data-cat="planning gis"><div class="visual hazard"><i>!</i><strong>HAZARD / ADAPTATION</strong></div><div class="info"><small>05 · HAZARD / ADAPTATION</small><h3>Landslide Hazard Perception</h3><p>Research support focused on perception, coping and adaptation strategies related to landslide hazards.</p><b>Hazard · Adaptation · GIS</b></div></article>
+<article class="project" data-cat="gis"><div class="visual code"><pre>ArcPy
+  clip()
+  extract()
+  reclass()
+  export()</pre><strong>GIS AUTOMATION</strong></div><div class="info"><small>06 · GIS AUTOMATION</small><h3>Automated Raster Processing</h3><p>Python-assisted workflows for batch raster clipping, extraction, reclassification and repeatable GIS outputs.</p><b>Python · ArcPy · Raster</b></div></article>
+</div></section>
+
+<section class="section workflow" id="workflow"><p class="label">04 / HOW I WORK</p><div class="two title"><h2>From <em>pixel</em> to plan.</h2><p>A practical workflow for complex spatial questions.</p></div><div class="flow"><div><b>01</b><strong>Collect</strong><small>Satellite · Survey · DEM · Planning data</small></div><i>→</i><div><b>02</b><strong>Process</strong><small>Clean · Clip · Composite · Classify</small></div><i>→</i><div><b>03</b><strong>Analyze</strong><small>Indices · Overlay · Suitability · Change</small></div><i>→</i><div><b>04</b><strong>Communicate</strong><small>Maps · Reports · Planning insights</small></div></div></section>
+
+<section class="section dark" id="experience"><p class="label">05 / EXPERIENCE</p><div class="two"><div><h2>Building <em>useful</em> geospatial outputs.</h2><p class="muted">Professional and project experience across planning, remote sensing, environmental research and GIS automation.</p></div><div class="timeline"><div><b>01</b><small>CURRENT</small><h3>National Consultant – Jr. GIS Expert</h3><strong>Urban Development Directorate (UDD)</strong><p>GIS and spatial-analysis support for urban, rural and regional development planning, thematic mapping and spatial database workflows.</p></div><div><b>02</b><small>PROJECT EXPERIENCE</small><h3>GIS & Remote Sensing</h3><strong>Planning · Environment · Agriculture</strong><p>Crop pattern analysis, planning datasets, environmental research, hazard studies, cartography and automated raster processing.</p></div></div></div></section>
+
+<section class="section gallery" id="gallery"><p class="label">06 / MAP GALLERY</p><div class="two title"><h2>Let the <em>maps</em> speak.</h2><p>Add your real JPG/PNG maps here later.</p></div><div class="gallery-grid"><div>MAP 01<small>Administrative / Planning</small></div><div>MAP 02<small>Land Use / LULC</small></div><div>MAP 03<small>Remote Sensing</small></div><div>MAP 04<small>Hydrology / Environment</small></div></div></section>
+
+<section class="contact" id="contact"><div class="radar"><div></div></div><div><p class="label">07 / CONTACT</p><h2>Let’s create something<br><em>spatially useful.</em></h2><p>Open to GIS projects, research collaboration, mapping work and professional opportunities.</p><div class="links"><a href="mailto:rahulsaha2626@gmail.com">rahulsaha2626@gmail.com ↗</a><a href="https://www.linkedin.com/in/rahul-saha-nill/" target="_blank">LinkedIn ↗</a><a href="assets/Rahul_Saha_CV.pdf">Download CV ↓</a></div></div></section>
+<footer>© 2026 Rahul Saha <span>GIS · Remote Sensing · Planning · GitHub Pages</span></footer>
+<script src="script.js"></script>
+</body></html>
